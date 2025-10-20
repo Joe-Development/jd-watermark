@@ -215,7 +215,7 @@ $(document).ready(() => {
                 IS_RESIZING = false;
                 $(document).off('mousemove.resize');
                 $(document).off('mouseup.resize');
-                container.removeClass('resizing'); // Remove resizing class when done
+                container.removeClass('resizing');
                 container.draggable('enable');
                 
                 data.scale = {
