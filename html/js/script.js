@@ -62,7 +62,7 @@ $(document).ready(() => {
         
         $('.watermark-container').css('cursor', 'move');
         
-        $.post('https://jd-watermark/edit-mode-active', JSON.stringify({}));
+        $.post(`https://${GetParentResourceName()}/edit-mode-active`, JSON.stringify({}));
     }
     
     function AddResizeHandles() {
@@ -93,11 +93,11 @@ $(document).ready(() => {
         
         $('.watermark-container').css('cursor', 'default');
         
-        $.post('https://jd-watermark/edit-mode-inactive', JSON.stringify({}));
+        $.post(`https://${GetParentResourceName()}/edit-mode-inactive`, JSON.stringify({}));
     }
     
     function SaveChanges() {
-        $.post('https://jd-watermark/save-settings', JSON.stringify({
+        $.post(`https://${GetParentResourceName()}/save-settings`, JSON.stringify({
             position: data.position,
             scale: data.scale
         }));
@@ -123,6 +123,7 @@ $(document).ready(() => {
             IS_RESIZING = true;
             RESIZE_DIRECTION = $(this).attr('class').replace('resize-handle ', '');
             container.draggable('disable');
+            container.addClass('resizing');
             
             $(document).on('mousemove.resize', HandleResize);
             $(document).on('mouseup.resize', StopResizing);
@@ -214,6 +215,7 @@ $(document).ready(() => {
                 IS_RESIZING = false;
                 $(document).off('mousemove.resize');
                 $(document).off('mouseup.resize');
+                container.removeClass('resizing'); // Remove resizing class when done
                 container.draggable('enable');
                 
                 data.scale = {
