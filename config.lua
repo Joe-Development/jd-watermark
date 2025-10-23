@@ -6,8 +6,8 @@ Config.Watermark = {
 
 Config.Defaults = {
     position = {
-        x = 0.95,
-        y = 0.95,
+        x = 0.90,
+        y = 0.90,
     },
     scale = {
         width = 100,
