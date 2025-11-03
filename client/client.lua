@@ -1,5 +1,3 @@
-IsEditModeActive = false
-
 CreateThread(function()
     Wait(200)
 
@@ -40,13 +38,11 @@ RegisterCommand('watermark', function()
 end, false)
 
 RegisterNUICallback('edit-mode-active', function(data, cb)
-    IsEditModeActive = true
     SetNuiFocus(true, true)
     cb('ok')
 end)
 
 RegisterNUICallback('edit-mode-inactive', function(data, cb)
-    IsEditModeActive = false
     SetNuiFocus(false, false)
     cb('ok')
 end)
