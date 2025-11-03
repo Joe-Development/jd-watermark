@@ -23,8 +23,8 @@ function GetScale()
 end
 
 function UpdateWatermark()
-    local pos = GetPosition() or Config.Defaults.position
-    local scale = GetScale() or Config.Defaults.scale
+    local pos = GetPosition()
+    local scale = GetScale()
     local image = Config.Watermark.image
     local min = Config.Defaults.min
 
