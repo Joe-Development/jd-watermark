@@ -19,8 +19,9 @@ It features high customizability and includes an overlay editor for end users.
 1. Download or clone the repository.
 2. Add `jd-watermark` to your FiveM resources folder.
 3. Start the resource in your `server.cfg`:
-
+```cfg
 ensure jd-watermark
+```
 
 ## Usage
 
